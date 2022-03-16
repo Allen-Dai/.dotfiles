@@ -103,3 +103,4 @@ source $ZSH/oh-my-zsh.sh
 alias l="ls -l"
 alias ll="ls -al"
 alias gotop="gotop --color=vice"
+alias tmux="tmux -u"
