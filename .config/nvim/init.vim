@@ -117,3 +117,8 @@ nnoremap <leader>l :wincmd l<cr>
 "Vim comment
 lua require('Comment').setup()
 
+" Python Exec
+nnoremap <C-\> :!python3 % <CR>
+
+" Clipboard
+set clipboard+=unnamedplus

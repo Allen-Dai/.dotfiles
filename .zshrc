@@ -104,3 +104,13 @@ alias l="ls -l"
 alias ll="ls -al"
 alias gotop="gotop --color=vice"
 alias tmux="tmux -u"
+
+nvimfzf()
+{
+    FILE=$(fzf)
+    if [ ! -z "$FILE" ]
+    then
+        nvim $FILE
+    fi
+}
+alias vf=nvimfzf

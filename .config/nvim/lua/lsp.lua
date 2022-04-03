@@ -47,7 +47,7 @@ cmp.setup({
     },
 
 	sources = {
-        -- tabnine completion? yayaya
+        -- tabnine completion
 
         { name = "cmp_tabnine" },
 
@@ -96,8 +96,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
-    capabilities=capabilities
 end
 
 -- CSharp lsp
@@ -118,6 +116,22 @@ require'lspconfig'.sumneko_lua.setup{
     on_attach = on_attach,
     -- config()
     capabilities = capabilities
+}
+
+-- Rustup - rust lsp .. etc
+require("lspconfig").rust_analyzer.setup{
+	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+    on_attach = on_attach,
+    capabilities = capabilities
+	--[[
+    settings = {
+        rust = {
+            unstable_features = true,
+            build_on_save = false,
+            all_features = true,
+        },
+    }
+    --]]
 }
 
 -- Lsp that can start without cmd
