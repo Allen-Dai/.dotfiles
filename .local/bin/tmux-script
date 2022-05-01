@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+result=`find ~ ~/Personal ~/School -mindepth 1 -maxdepth 1 -type d | fzf`
+
+if [[ -z $result ]]; then
+    exit 1
+fi
+
+result_name=`basename "$result" | tr . _`
+tmux_running=`pgrep tmux`
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]] ; then
+    tmux new-session -s "$result_name" -c "$result" -d
+    exit 1
+fi
+
+if ! tmux has-session -t=$result_name 2> /dev/null; then
+    tmux new-session -ds "$result_name" -c "$result"
+fi
+
+tmux switch-client -t "$result_name"
