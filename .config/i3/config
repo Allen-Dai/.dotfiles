@@ -60,7 +60,7 @@ gaps inner 5
 gaps top 18
 
 #Compositor. This helps in transparency and fading.
-exec_always --no-startup-id picom
+exec_always --no-startup-id picom --experimental-backends
 
 # Lock Screen This will yield a black lock screen, which
 # can be customized to your liking.

@@ -94,6 +94,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', '<space>d', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
@@ -109,16 +110,16 @@ require'lspconfig'.omnisharp.setup{
 }
 
 -- Lua lsp
-local sumneko_bin = os.getenv("HOME") .. "/lualsp/bin/lua-language-server"
+--[[ local sumneko_bin = os.getenv("HOME") .. "/lualsp/bin/lua-language-server"
 local sumneko_root_path = os.getenv("HOME") .. "/lualsp/main.lua"
 require'lspconfig'.sumneko_lua.setup{
     cmd = { sumneko_bin, "-E", sumneko_root_path },
     on_attach = on_attach,
     -- config()
     capabilities = capabilities
-}
+} --]]
 
--- Rustup - rust lsp .. etc
+-- who even uses this? - Yes who THE FUCK use this.
 require("lspconfig").rust_analyzer.setup{
 	cmd = { "rustup", "run", "nightly", "rust-analyzer" },
     on_attach = on_attach,

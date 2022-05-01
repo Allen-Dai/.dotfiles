@@ -18,8 +18,6 @@ set signcolumn=yes
 set cmdheight=1
 set updatetime=50
 set shortmess+=c
-set termguicolors
-set shortmess+=c
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -33,9 +31,9 @@ Plug 'preservim/nerdtree'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
-"Plug 'nvim-lua/completion-nvim'
-Plug 'prettier/vim-prettier', {'do': 'npm install'}
-Plug 'roxma/vim-tmux-clipboard'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'prettier/vim-prettier', {'do': 'npm install'}
+" Plug 'roxma/vim-tmux-clipboard'
 Plug 'tjdevries/Comment.nvim'
 
 " Auto cmp
@@ -58,28 +56,36 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
-Plug 'morhetz/gruvbox'
+"Plug 'lukas-reineke/indent-blankline.nvim'
 
-Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim'
 call plug#end()
 
 lua require 'init'
 
 "Colors"
+if (has("termguicolors"))
+    set termguicolors
+endif
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
+
 "Colorscheme config
-colorscheme gruvbox
 set background=dark
 let g:gruvbox_invert_selection = '0'
+" set t_Co=256
+"let g:tokyonight_style = "night"
+colorscheme gruvbox
 highlight Normal guibg=none
 highlight SignColumn guibg=none
 highlight CursorLineNr guibg=none
-highlight Pmenu guibg=#2E3440
-"highlight MatchParen guibg=#4C566A guifg=none
+" highlight Pmenu guibg=#202224
+highlight Pmenu guibg=#36383a
+highlight MatchParen guibg=#4C566A
 set laststatus=0
 
 lua require'nvim-treesitter.configs'.setup{highlight = { enable = true}}
