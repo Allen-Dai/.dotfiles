@@ -114,3 +114,5 @@ nvimfzf()
     fi
 }
 alias vf=nvimfzf
+
+alias update="sudo pacman -Syu && paru -Syu && nvim +PlugUpdate +qall"
