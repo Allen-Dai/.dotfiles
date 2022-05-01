@@ -98,10 +98,6 @@ nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
-"Nerd Tree keybinds
-nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-
 lua require('nvim-web-devicons').get_icons()
 
 "Lsp autocomplete
@@ -128,3 +124,6 @@ nnoremap <C-\> :!python3 % <CR>
 
 " Clipboard
 set clipboard+=unnamedplus
+
+"
+nnoremap <silent> <C-f> :silent !tmux neww tmux-session<CR>
