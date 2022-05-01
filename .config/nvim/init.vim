@@ -111,8 +111,8 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "Tmux stuff
-inoremap <c-h> <ESC>
-autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+"inoremap <c-h> <ESC>
+"autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
 
 "Vim window movement keybinds
 nnoremap <leader>h :wincmd h<cr>
