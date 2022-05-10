@@ -58,6 +58,8 @@ Plug 'simrat39/symbols-outline.nvim'
 "Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'ishan9299/nvim-solarized-lua'
 call plug#end()
 
 lua require 'init'
@@ -71,19 +73,21 @@ if exists('+termguicolors')
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-
+let base16colorspace=256
 "Colorscheme config
 set background=dark
-let g:gruvbox_invert_selection = '0'
+"let g:gruvbox_invert_selection = '0'
 " set t_Co=256
-"let g:tokyonight_style = "night"
-colorscheme gruvbox
+let g:tokyonight_style = "night"
+lua vim.g.tokyonight_transparent = true
+colorscheme tokyonight
 highlight Normal guibg=none
 highlight SignColumn guibg=none
 highlight CursorLineNr guibg=none
-" highlight Pmenu guibg=#202224
-highlight Pmenu guibg=#36383a
+" highlight Pmenu guibg=#202225
+" highlight Pmenu guibg=#36383a
 highlight MatchParen guibg=#4C566A
+highlight LineNr guibg=none
 set laststatus=0
 
 lua require'nvim-treesitter.configs'.setup{highlight = { enable = true}}
