@@ -107,3 +107,5 @@ alias tmux="tmux -u"
 alias update="sudo pacman -Syu && paru -Syu && nvim +PlugUpdate +qall"
 
 bindkey -s ^f "tmux-session\n"
+
+LD_LIBRARY_PATH=/usr/local/lib

@@ -1,6 +1,5 @@
 set nu
 set rnu
-set guicursor=
 set nohlsearch
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -59,7 +58,6 @@ Plug 'simrat39/symbols-outline.nvim'
 "Plug 'lukas-reineke/indent-blankline.nvim'
 
 Plug 'morhetz/gruvbox'
-Plug 'folke/tokyonight.nvim'
 call plug#end()
 
 lua require 'init'
@@ -127,3 +125,11 @@ set clipboard+=unnamedplus
 
 "
 nnoremap <silent> <C-f> :silent !tmux neww tmux-session<CR>
+
+
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
+
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup END

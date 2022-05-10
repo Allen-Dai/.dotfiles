@@ -48,7 +48,7 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -matching fuzzy -sort -sorti
 
 # Launch Polybar. Take a look at ~/.confi/polybar/config to
 # configure the bar.
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Start a wallpaper script.
 exec_always --no-startup-id kill -9 $(ps -ef | grep randWallpaper.sh | grep -v grep | awk '{print $2}') || sleep 3s && zsh $HOME/.config/i3/randWallpaper.sh
@@ -57,7 +57,6 @@ bindsym $mod+shift+w exec --no-startup-id kill -9 $(ps -ef | grep randWallpaper.
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 5
-gaps top 18
 
 #Compositor. This helps in transparency and fading.
 exec_always --no-startup-id picom --experimental-backends
