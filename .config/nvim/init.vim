@@ -57,7 +57,7 @@ Plug 'simrat39/symbols-outline.nvim'
 
 "Plug 'lukas-reineke/indent-blankline.nvim'
 
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'ishan9299/nvim-solarized-lua'
 call plug#end()
@@ -80,7 +80,8 @@ set background=dark
 " set t_Co=256
 let g:tokyonight_style = "night"
 lua vim.g.tokyonight_transparent = true
-colorscheme tokyonight
+lua vim.g.tokyonight_colors = { bg_float =  "#24283b"}
+colorscheme gruvbox
 highlight Normal guibg=none
 highlight SignColumn guibg=none
 highlight CursorLineNr guibg=none
