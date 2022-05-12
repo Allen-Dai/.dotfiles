@@ -70,7 +70,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git ssh-agent)
+plugins=(git ssh-agent zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,5 +107,5 @@ alias tmux="tmux -u"
 alias update="sudo pacman -Syu && paru -Syu && nvim +PlugUpdate +qall"
 
 bindkey -s ^f "tmux-session\n"
-
-LD_LIBRARY_PATH=/usr/local/lib
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
