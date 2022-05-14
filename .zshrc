@@ -109,3 +109,4 @@ alias update="sudo pacman -Syu && paru -Syu && nvim +PlugUpdate +qall"
 bindkey -s ^f "tmux-session\n"
 bindkey '^I'   complete-word       # tab          | complete
 bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan"
