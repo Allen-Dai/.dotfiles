@@ -59,6 +59,8 @@ Plug 'simrat39/symbols-outline.nvim'
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'overcache/NeoSolarized'
+Plug 'robertmeta/nofrils'
+Plug 'davidosomething/vim-colors-meh'
 call plug#end()
 
 lua require 'init'
@@ -76,10 +78,11 @@ endif
 set background=dark
 "let g:gruvbox_invert_selection = '0'
 set t_Co=256
+let g:neosolarized_contrast = "high"
 let g:neosolarized_termtrans = 1
-colorscheme NeoSolarized 
-"highlight Normal guibg=#131516
-" highlight Normal guibg=none
+colorscheme meh
+highlight Normal guibg=#212124
+"highlight Normal guibg=none
 " highlight SignColumn guibg=none
 " highlight CursorLineNr guibg=none
 " highlight Pmenu guibg=#202225

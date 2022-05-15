@@ -63,7 +63,7 @@ hi! Search              guibg=#dd99ff guifg=bg                ctermbg=219   cter
 hi! SpellBad                                                  ctermbg=NONE
 hi! SpellCap                                                  ctermbg=NONE
 hi! SpellRare                                                 ctermbg=NONE
-hi! Special                           guifg=#bbbbbb                         ctermfg=172
+hi! Special                           guifg=#db4b4b
 hi! SpecialComment                    guifg=#707a8a gui=NONE
 hi! SpecialKey                        guifg=#772222
 hi! Statement                         guifg=#bbbbbb gui=NONE                ctermfg=245
