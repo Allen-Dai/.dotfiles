@@ -1,4 +1,6 @@
 local cmp = require("cmp")
+local lsp_status = require("lsp-status")
+lsp_status.register_progress()
 
 local source_mapping = {
 	buffer = "[Buffer]",
@@ -137,7 +139,7 @@ require("lspconfig").rust_analyzer.setup{
 }
 
 -- Lsp that can start without cmd
-local servers = {'pylsp', 'tsserver', 'ccls'}
+local servers = {'pylsp', 'tsserver', 'ccls', 'jdtls'}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup{
         on_attach = on_attach,

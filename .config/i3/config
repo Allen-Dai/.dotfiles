@@ -285,7 +285,7 @@ exec --no-startup-id spotify
 exec --no-startup-id discord
 
 #Window Border
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 client.focused #d8dee9 #d8dee9 #000000 #d8dee9 #d8dee9 #d8dee9
 bindsym $mod+Shift+b border normal
 

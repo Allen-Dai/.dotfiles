@@ -17,6 +17,7 @@ set signcolumn=yes
 set cmdheight=1
 set updatetime=50
 set shortmess+=c
+"set laststatus=0
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -26,8 +27,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdtree'
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'neovim/nvim-lspconfig'
 " Plug 'nvim-lua/completion-nvim'
@@ -54,13 +54,10 @@ Plug 'onsails/lspkind-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'simrat39/symbols-outline.nvim'
-
-"Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'nvim-lua/lsp-status.nvim'
 
 Plug 'gruvbox-community/gruvbox'
-Plug 'overcache/NeoSolarized'
-Plug 'robertmeta/nofrils'
-Plug 'davidosomething/vim-colors-meh'
+Plug 'EdenEast/nightfox.nvim'
 call plug#end()
 
 lua require 'init'
@@ -80,16 +77,15 @@ set background=dark
 set t_Co=256
 let g:neosolarized_contrast = "high"
 let g:neosolarized_termtrans = 1
-colorscheme meh
-highlight Normal guibg=#212124
-"highlight Normal guibg=none
-" highlight SignColumn guibg=none
-" highlight CursorLineNr guibg=none
-" highlight Pmenu guibg=#202225
-" highlight Pmenu guibg=#36383a
-" highlight MatchParen guibg=#4C566A
+colorscheme gruvbox
+"highlight Normal guibg=#181a1b
+highlight Normal guibg=none
+highlight SignColumn guibg=none
+highlight CursorLineNr guibg=none
+"highlight Pmenu guibg=#202225
+highlight Pmenu guibg=#36383a
+highlight MatchParen guibg=#4C566A
 highlight LineNr guibg=none
-set laststatus=0
 
 lua require'nvim-treesitter.configs'.setup{highlight = { enable = true}}
 
@@ -97,7 +93,7 @@ lua require'nvim-treesitter.configs'.setup{highlight = { enable = true}}
 lua require('telescope').load_extension('fzy_native')
 nnoremap <C-p> :lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <space>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
@@ -131,6 +127,8 @@ set clipboard+=unnamedplus
 "
 nnoremap <silent> <C-f> :silent !tmux neww tmux-session<CR>
 
+"To disbale 'q' for recording - i dont use it :l
+nnoremap q <Nop>
 
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
@@ -138,3 +136,5 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
+
+nnoremap <C-a> <Nop>

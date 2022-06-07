@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias vi="nvim"
 alias l="ls -l"
 alias ll="ls -al"
 alias gotop="gotop --color=vice"

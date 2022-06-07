@@ -15,7 +15,7 @@ set background=dark
 
 hi! dkoBgAlt            guibg=#24252a               ctermbg=236
 hi! dkoBgLight          guibg=#303135               ctermbg=237
-hi! dkoTextLight        guifg=#bbbbbb                           ctermfg=253
+hi! dkoTextLight        guifg=#dddddd                           ctermfg=253
 
 hi! dkoPopup            guibg=#2a2a2f guifg=#ccc0c0
 hi! dkoPopupBlank       guibg=#2a2a2f guifg=#2a2a2f
@@ -36,18 +36,18 @@ hi! dkoSignMessage                    guifg=#77aa88
 " Vim base
 " ============================================================================
 
-hi! Normal              guibg=#202022 guifg=#bbbbbb           ctermbg=235   ctermfg=250
+hi! Normal              guibg=#202022 guifg=#dddddd           ctermbg=235   ctermfg=250
 
 hi! Boolean                           guifg=#cccccc gui=italic
 hi! Comment                           guifg=#60687a gui=italic              ctermfg=240
 hi! Constant                          guifg=NONE    gui=italic
-hi! Delimiter                         guifg=#bbbbbb                         ctermfg=139
+hi! Delimiter                         guifg=#dddddd                         ctermfg=139
 hi! DiffAdd             guibg=#2a332a guifg=#668844           ctermbg=235 ctermfg=22
 hi! DiffChange          guibg=#2c2b2a guifg=#7f6030           ctermbg=235 ctermfg=94
 hi! DiffDelete          guibg=#4a2a2a guifg=#aa6666           ctermbg=235 ctermfg=52
 hi! DiffText            guibg=#4a2a2a
 hi! Error               guibg=NONE    guifg=#ee6666           ctermbg=NONE ctermfg=160
-hi! Function                          guifg=#bbbbbb
+hi! Function                          guifg=#dddddd
 hi! link Identifier dkoTextLight
 hi! Ignore                            guifg=#40485a
 hi! IncSearch           guibg=#dd77cc guifg=bg      gui=NONE  ctermbg=219   ctermfg=235
@@ -56,7 +56,7 @@ hi! MoreMsg                           guifg=#aa6666
 hi! Noise                             guifg=#888888                         ctermfg=243
 hi! NonText                           guifg=#334455
 hi! Number                            guifg=#ee7777                         ctermfg=208
-hi! Operator                          guifg=#bbbbbb
+hi! Operator                          guifg=#dddddd
 hi! link PreProc dkoTextLight
 hi! Question                          guifg=#88aabb
 hi! Search              guibg=#dd99ff guifg=bg                ctermbg=219   ctermfg=bg
@@ -66,12 +66,12 @@ hi! SpellRare                                                 ctermbg=NONE
 hi! Special                           guifg=#db4b4b
 hi! SpecialComment                    guifg=#707a8a gui=NONE
 hi! SpecialKey                        guifg=#772222
-hi! Statement                         guifg=#bbbbbb gui=NONE                ctermfg=245
-hi! StorageClass                      guifg=#bbbbbb
+hi! Statement                         guifg=#dddddd gui=NONE                ctermfg=245
+hi! StorageClass                      guifg=#dddddd
 hi! String                            guifg=#88aabb                         ctermfg=110
 hi! link Title dkoTextLight
 hi! Todo                guibg=#303033 guifg=#ddaa66 gui=bold
-hi! Type                              guifg=#bbbbbb gui=NONE  ctermfg=253
+hi! Type                              guifg=#dddddd gui=NONE  ctermfg=253
 hi! Underlined                        guifg=#88aaee gui=underline           ctermfg=110
 hi! Visual              guibg=#afa08f guifg=#1f1f1f
 hi! WarningMsg          guibg=#db4b4b guifg=#311111
