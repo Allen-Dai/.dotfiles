@@ -91,7 +91,7 @@ lua require'nvim-treesitter.configs'.setup{highlight = { enable = true}}
 
 "Telescope
 lua require('telescope').load_extension('fzy_native')
-nnoremap <C-p> :lua require('telescope.builtin').git_files()<cr>
+nnoremap <space>p :lua require('telescope.builtin').git_files()<cr>
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <space>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
