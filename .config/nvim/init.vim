@@ -138,3 +138,6 @@ augroup highlight_yank
 augroup END
 
 nnoremap <C-a> <Nop>
+nnoremap g<C-a> <Nop>
+nnoremap <C-x> <Nop>
+nnoremap g<C-x> <Nop>
