@@ -96,6 +96,7 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <space>g <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+lua vim.api.nvim_set_keymap('n', '<space>w', [[<cmd>lua require('telescope.builtin').grep_string()<cr>]], { silent = true, noremap = true })
 
 lua require('nvim-web-devicons').get_icons()
 
@@ -136,6 +137,12 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
+
+function SearchWordUnderCursor()
+    silent! normal yiw
+    silent! let @/ = @@
+    silent! set hls
+endfunction
 
 nnoremap <C-a> <Nop>
 nnoremap g<C-a> <Nop>
