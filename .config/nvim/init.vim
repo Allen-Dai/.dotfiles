@@ -17,6 +17,7 @@ set signcolumn=yes
 set cmdheight=1
 set updatetime=50
 set shortmess+=c
+set clipboard+=unnamedplus
 "set laststatus=0
 
 call plug#begin('~/.config/nvim/plugged')
@@ -87,64 +88,26 @@ highlight Pmenu guibg=#36383a
 highlight MatchParen guibg=#4C566A
 highlight LineNr guibg=none
 
-lua require'nvim-treesitter.configs'.setup{highlight = { enable = true}}
-
-"Telescope
-lua require('telescope').load_extension('fzy_native')
-nnoremap <space>p :lua require('telescope.builtin').git_files()<cr>
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <space>g <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-lua vim.api.nvim_set_keymap('n', '<space>w', [[<cmd>lua require('telescope.builtin').grep_string()<cr>]], { silent = true, noremap = true })
-
-lua require('nvim-web-devicons').get_icons()
-
 "Lsp autocomplete
 set completeopt=menuone,noinsert,noselect
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-"Tmux stuff
-"inoremap <c-h> <ESC>
-"autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
-
-"Vim window movement keybinds
-nnoremap <leader>h :wincmd h<cr>
-nnoremap <leader>j :wincmd j<cr>
-nnoremap <leader>k :wincmd k<cr>
-nnoremap <leader>l :wincmd l<cr>
-
-"Vim comment
-lua require('Comment').setup()
-
-" Python Exec
-" nnoremap <C-\> :!python3 % <CR>
-
-" Clipboard
-set clipboard+=unnamedplus
-
-"
-nnoremap <silent> <C-f> :silent !tmux neww tmux-session<CR>
-
-"To disbale 'q' for recording - i dont use it :l
-nnoremap q <Nop>
-
-lua require'nvim-treesitter.configs'.setup { highlight = { enable = true }, incremental_selection = { enable = true }, textobjects = { enable = true }}
 
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
 
-function SearchWordUnderCursor()
-    silent! normal yiw
-    silent! let @/ = @@
-    silent! set hls
-endfunction
+nnoremap <C-h> :wincmd h<cr>
+nnoremap <C-j> :wincmd j<cr>
+nnoremap <C-k> :wincmd k<cr>
+nnoremap <C-l> :wincmd l<cr>
 
 nnoremap <C-a> <Nop>
 nnoremap g<C-a> <Nop>
 nnoremap <C-x> <Nop>
 nnoremap g<C-x> <Nop>
+
+"To disbale 'q' for recording - i dont use it :l
+nnoremap q <Nop>
+"slice contron-f for my tmux-session script
+nnoremap <silent> <C-f> :silent !tmux neww tmux-session<CR>

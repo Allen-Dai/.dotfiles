@@ -1,8 +1,6 @@
 require('lsp')
 require('statusline')
-
-require('nightfox').setup({
-    options ={
-        transparent = true,
-    }
-})
+require('telescope').load_extension('fzy_native')
+require('telescope-keymap')
+require('nvim-web-devicons').get_icons()
+require('Comment').setup()
