@@ -28,10 +28,12 @@ cmp.setup({
 	mapping = {
 		["<C-u>"] = cmp.mapping.scroll_docs(-4),
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
 
         ["<Tab>"] = cmp.mapping.select_next_item(),
         ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+
+        ['<CR>'] = cmp.mapping.confirm({ select = false }),
+		["<C-Space>"] = cmp.mapping.complete(),
 	},
 
     formatting = {
@@ -42,6 +44,7 @@ cmp.setup({
                 if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
                     menu = entry.completion_item.data.detail .. ' ' .. menu
                 end
+                vim_item.kind = ""
             end
             vim_item.menu = menu
             return vim_item
@@ -139,7 +142,7 @@ require("lspconfig").rust_analyzer.setup{
 }
 
 -- Lsp that can start without cmd
-local servers = {'pylsp', 'tsserver', 'ccls', 'jdtls'}
+local servers = {'pylsp', 'tsserver', 'ccls'}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup{
         on_attach = on_attach,
