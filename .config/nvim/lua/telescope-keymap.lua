@@ -1,3 +1,11 @@
+require('telescope').load_extension('fzy_native')
+require('telescope').setup({
+    pickers = {
+        git_files = {
+            show_untracked = true
+        }
+    }
+})
 local opts = { noremap = ture, silent = true}
 local keymap = vim.api.nvim_set_keymap
 keymap("n", "<space>p", ":lua require('telescope.builtin').git_files()<CR>", opts)

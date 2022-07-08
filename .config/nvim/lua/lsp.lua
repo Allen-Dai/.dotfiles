@@ -106,7 +106,8 @@ local on_attach = function(client, bufnr)
 end
 
 -- CSharp lsp
-local omnisharp_bin = os.getenv("HOME") .. "/omnisharp/run"
+--~/.local/share/nvim/lsp_servers/omnisharp  
+local omnisharp_bin = os.getenv("HOME") .. "/.local/share/nvim/lsp_servers/omnisharp/omnisharp/OmniSharp"
 local pid = vim.fn.getpid()
 require'lspconfig'.omnisharp.setup{
     on_attach = on_attach,
