@@ -101,8 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias vi="nvim"
-alias l="exa -l"
-alias ll="exa -al"
 alias gotop="gotop --color=vice"
 alias tmux="tmux -u"
 alias update="sudo pacman -Syu && paru -Syu && nvim +PlugUpdate +qall"
