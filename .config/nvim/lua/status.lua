@@ -4,7 +4,7 @@
 local stages_util = require("notify.stages.util")
 
 require("notify").setup({
-    fps = 240,
+    fps = 120,
     background_colour = "#201c24",
     stages = {
       function(state)

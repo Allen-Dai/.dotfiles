@@ -68,6 +68,7 @@ Plug 'neovim/nvim-lspconfig'
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 "git
 Plug 'mbbill/undotree'

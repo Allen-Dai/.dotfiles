@@ -11,4 +11,7 @@ require('nightfox').setup({
     }
 })
 require('status')
-require("nvim-lsp-installer").setup {}
+require("nvim-lsp-installer")
+require('catppuccin').setup({
+    transparent_background = true
+})
