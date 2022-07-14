@@ -124,3 +124,17 @@ nnoremap g<C-x> <Nop>
 nnoremap q <Nop>
 "slice contron-f for my tmux-session script
 nnoremap <silent> <C-f> :silent !tmux neww tmux-session<CR>
+
+"Undo
+if has("persistent_undo")
+   let target_path = expand('~/.undodir')
+
+    " create the directory and any parent directories
+    " if the location does not exist.
+    if !isdirectory(target_path)
+        call mkdir(target_path, "p", 0700)
+    endif
+
+    let &undodir=target_path
+    set undofile
+endif
