@@ -68,6 +68,10 @@ Plug 'neovim/nvim-lspconfig'
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'EdenEast/nightfox.nvim'
+
+"git
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 lua require 'init'
