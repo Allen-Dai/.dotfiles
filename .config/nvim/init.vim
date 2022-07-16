@@ -68,6 +68,8 @@ Plug 'neovim/nvim-lspconfig'
 
 Plug 'gruvbox-community/gruvbox'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'cocopon/iceberg.vim'
+Plug 'rebelot/kanagawa.nvim'
 
 "git
 Plug 'mbbill/undotree'
@@ -89,10 +91,11 @@ endif
 set background=dark
 "let g:gruvbox_invert_selection = '0'
 set t_Co=256
-let g:neosolarized_contrast = "high"
-let g:neosolarized_termtrans = 1
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
-colorscheme catppuccin 
+colorscheme iceberg 
+highlight Normal guibg=none
+highlight SignColumn guibg=none
+highlight LineNr guibg=none
 highlight MatchParen guibg=#4C566A
 
 "Lsp autocomplete
