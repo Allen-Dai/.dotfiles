@@ -95,14 +95,16 @@ local nvim_lsp = require'lspconfig'
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-    local opts = { noremap=true, silent=true }
+    local opts = { noremap=true, silent=true, buffer=bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, opts)
-    vim.keymap.set('n', '<space>a', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.format, opts, { async=true } )
+    vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
 end
 
 -- CSharp lsp
