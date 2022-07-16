@@ -67,7 +67,6 @@ Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 
 Plug 'gruvbox-community/gruvbox'
-Plug 'EdenEast/nightfox.nvim'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 
 "git
@@ -92,15 +91,9 @@ set background=dark
 set t_Co=256
 let g:neosolarized_contrast = "high"
 let g:neosolarized_termtrans = 1
-colorscheme gruvbox
-"highlight Normal guibg=#181a1b
-highlight Normal guibg=none
-highlight SignColumn guibg=none
-highlight CursorLineNr guibg=none
-"highlight Pmenu guibg=#202225
-highlight Pmenu guibg=#36383a
+let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+colorscheme catppuccin 
 highlight MatchParen guibg=#4C566A
-highlight LineNr guibg=none
 
 "Lsp autocomplete
 set completeopt=menuone,noinsert,noselect
