@@ -101,7 +101,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<space>d', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<space>f', vim.lsp.buf.format, opts, { async=true })
+    vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, opts)
     vim.keymap.set('n', '<space>a', vim.lsp.buf.code_action, opts)
 end
 
