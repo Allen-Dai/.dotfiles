@@ -23,8 +23,6 @@ set clipboard+=unnamedplus
 call plug#begin('~/.config/nvim/plugged')
 
 "Telescope
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
@@ -67,10 +65,13 @@ Plug 'catppuccin/nvim', {'as': 'catppuccin'}
 Plug 'tpope/vim-fugitive'
 
 "Utils
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'mbbill/undotree'
 Plug 'rcarriga/nvim-notify'
 Plug 'tjdevries/Comment.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'ThePrimeagen/harpoon'
 
 call plug#end()
 
