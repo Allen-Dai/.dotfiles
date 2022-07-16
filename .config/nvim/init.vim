@@ -22,19 +22,14 @@ set clipboard+=unnamedplus
 
 call plug#begin('~/.config/nvim/plugged')
 
+"Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+"Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'tpope/vim-fugitive'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-lua/completion-nvim'
-" Plug 'prettier/vim-prettier', {'do': 'npm install'}
-" Plug 'roxma/vim-tmux-clipboard'
-Plug 'tjdevries/Comment.nvim'
 
 " Auto cmp
 Plug 'neovim/nvim-lspconfig'
@@ -46,34 +41,37 @@ Plug 'hrsh7th/nvim-cmp'
 
 "Tabnine
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-" Luasnip
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rafamadriz/friendly-snippets'
 
+"LSP
 Plug 'onsails/lspkind-nvim'
 Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'glepnir/lspsaga.nvim'
-Plug 'simrat39/symbols-outline.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
-Plug 'rcarriga/nvim-notify'
+Plug 'neovim/nvim-lspconfig'
+Plug 'kyazdani42/nvim-web-devicons'
+
+"LSP installer
+Plug 'williamboman/nvim-lsp-installer'
+
+"Dap
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'leoluz/nvim-dap-go'
 Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'neovim/nvim-lspconfig'
-
+"Colorscheme
 Plug 'gruvbox-community/gruvbox'
 Plug 'catppuccin/nvim', {'as': 'catppuccin'}
-Plug 'cocopon/iceberg.vim'
-Plug 'rebelot/kanagawa.nvim'
 
 "git
-Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
+
+"Utils
+Plug 'mbbill/undotree'
+Plug 'rcarriga/nvim-notify'
+Plug 'tjdevries/Comment.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+
 call plug#end()
 
 lua require 'init'
@@ -92,11 +90,7 @@ set background=dark
 "let g:gruvbox_invert_selection = '0'
 set t_Co=256
 let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
-colorscheme iceberg 
-highlight Normal guibg=none
-highlight SignColumn guibg=none
-highlight LineNr guibg=none
-highlight MatchParen guibg=#4C566A
+colorscheme catppuccin 
 
 "Lsp autocomplete
 set completeopt=menuone,noinsert,noselect
