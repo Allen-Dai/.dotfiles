@@ -10,7 +10,7 @@ set nobackup
 set expandtab
 set smartindent
 set incsearch
-set scrolloff=15
+set scrolloff=5
 set hidden
 set autoindent
 set signcolumn=yes
@@ -88,9 +88,8 @@ endif
 
 "Colorscheme config
 set background=dark
-"let g:gruvbox_invert_selection = '0'
 set t_Co=256
-let g:catppuccin_flavour = "mocha" " latte, frappe, macchiato, mocha
+let g:catppuccin_flavour = "mocha"
 colorscheme catppuccin 
 
 "Lsp autocomplete
