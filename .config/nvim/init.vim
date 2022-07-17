@@ -58,8 +58,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'nvim-telescope/telescope-dap.nvim'
 
 "Colorscheme
-Plug 'gruvbox-community/gruvbox'
-Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+Plug 'ellisonleao/gruvbox.nvim'
 
 "git
 Plug 'tpope/vim-fugitive'
@@ -89,8 +88,12 @@ endif
 "Colorscheme config
 set background=dark
 set t_Co=256
-let g:catppuccin_flavour = "mocha"
-colorscheme catppuccin 
+colorscheme gruvbox 
+hi Normal guibg=None
+hi LineNr guibg=None
+hi SignColumn guibg=None
+hi MatchParen guibg=#4C566A
+hi Pmenu guibg=#36383a
 
 "Lsp autocomplete
 set completeopt=menuone,noinsert,noselect
