@@ -161,4 +161,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
         update_in_insert = true,
         underline = true,
         signs = true,
+        -- severity_sort = true
     })

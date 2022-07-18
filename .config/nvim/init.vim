@@ -46,6 +46,7 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'L3MON4D3/LuaSnip'
 
 "LSP installer
 Plug 'williamboman/nvim-lsp-installer'

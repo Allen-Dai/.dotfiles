@@ -27,7 +27,7 @@ font pango:CaskaydiaCove Nerd Font
 #font pango:DejaVu Sans Mono 8
 
 # start a terminal. We use kitty.
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+q kill
@@ -40,7 +40,7 @@ bindsym $mod+q kill
 # This is the recommended mode. It searches for the programs as
 # defined in .desktop file, with their description, and corresponding
 # icons
-bindsym $mod+d exec --no-startup-id rofi -show drun -matching fuzzy -sort -sorting-method fzf
+bindsym $mod+p exec --no-startup-id rofi -show drun -matching fuzzy -sort -sorting-method fzf
 
 # The other mode search for applications in /usr/bin or /usr/sbin.
 # This should only be used if a program lacks a .desktop file.

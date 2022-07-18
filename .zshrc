@@ -100,8 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias l="exa -l"
-alias ll="exa -al"
+alias l="exa -l -g"
+alias ll="exa -al -g"
 alias vi="nvim"
 alias gotop="gotop --color=vice"
 alias tmux="tmux -u"
