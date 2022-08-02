@@ -54,7 +54,7 @@ cmp.setup({
 	sources = {
         -- tabnine completion
 
-        { name = "cmp_tabnine" },
+        --{ name = "cmp_tabnine" },
 
 		{ name = "nvim_lsp" },
 
