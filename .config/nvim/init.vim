@@ -115,6 +115,11 @@ nnoremap g<C-a> <Nop>
 nnoremap <C-x> <Nop>
 nnoremap g<C-x> <Nop>
 
+"nnoremap J :m .+1<CR>==
+"nnoremap K :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 "To disbale 'q' for recording - i dont use it :l
 nnoremap q <Nop>
 "slice contron-f for my tmux-session script
